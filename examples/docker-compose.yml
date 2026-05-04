@@ -1,0 +1,12 @@
+services:
+  node-red:
+    image: ghcr.io/knobo/node-red-midi:latest
+    container_name: node-red
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=Europe/Oslo
+    volumes:
+      - ./data:/data
+    devices:
+      - /dev/snd
